@@ -14,12 +14,16 @@ class Fibonachi{
     }
 
     static int bfs(int n){
-        if(n == 1){
-            return fiboArr[1] = 1;
-        }else if(n == 2){
-            return fiboArr[2] = 1;
+        if(fiboArr[n] > 0 ){
+            return fiboArr[n];
         }else{
-            return fiboArr[n] = bfs(n-2) + bfs(n-1);
+            if(n == 1){
+                return fiboArr[1] = 1;
+            }else if(n == 2){
+                return fiboArr[2] = 1;
+            }else{
+                return fiboArr[n] = bfs(n-2) + bfs(n-1);
+            }
         }
     }
 
